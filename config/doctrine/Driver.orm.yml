@@ -1,0 +1,28 @@
+App\Entity\Driver:
+    type: entity
+    table: driver
+    uniqueConstraints:
+        fk_user_idx:
+            columns:
+                - user_fk
+    id:
+        id:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            id: true
+            generator:
+                strategy: IDENTITY
+    manyToOne:
+        userFk:
+            targetEntity: User
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                user_fk:
+                    referencedColumnName: id
+            orphanRemoval: false
+    lifecycleCallbacks: {  }

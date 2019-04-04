@@ -1,0 +1,41 @@
+App\Entity\Origin:
+    type: entity
+    table: origin
+    uniqueConstraints:
+        fk_importer_idx:
+            columns:
+                - importer_fk
+        fk_branch_office_idx:
+            columns:
+                - branch_office_fk
+    id:
+        id:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            id: true
+            generator:
+                strategy: IDENTITY
+    manyToOne:
+        branchOfficeFk:
+            targetEntity: BranchOffice
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                branch_office_fk:
+                    referencedColumnName: id
+            orphanRemoval: false
+        importerFk:
+            targetEntity: Importer
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                importer_fk:
+                    referencedColumnName: id
+            orphanRemoval: false
+    lifecycleCallbacks: {  }

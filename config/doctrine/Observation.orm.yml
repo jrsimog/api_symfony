@@ -1,0 +1,35 @@
+App\Entity\Observation:
+    type: entity
+    table: observation
+    uniqueConstraints:
+        fk_vehicle_idx:
+            columns:
+                - vehicle_fk
+    id:
+        id:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            id: true
+            generator:
+                strategy: IDENTITY
+    fields:
+        commentary:
+            type: string
+            nullable: true
+            length: 100
+            options:
+                fixed: false
+    manyToOne:
+        vehicleFk:
+            targetEntity: Vehicle
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                vehicle_fk:
+                    referencedColumnName: id
+            orphanRemoval: false
+    lifecycleCallbacks: {  }

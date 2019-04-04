@@ -1,0 +1,54 @@
+App\Entity\BranchOffice:
+    type: entity
+    table: branch_office
+    uniqueConstraints:
+        fk_city_idx:
+            columns:
+                - city_fk
+        fk_automotive_idx:
+            columns:
+                - automotive_fk
+    id:
+        id:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            id: true
+            generator:
+                strategy: IDENTITY
+    fields:
+        name:
+            type: string
+            nullable: true
+            length: 100
+            options:
+                fixed: false
+        address:
+            type: string
+            nullable: true
+            length: 100
+            options:
+                fixed: false
+    manyToOne:
+        automotiveFk:
+            targetEntity: Automotive
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                automotive_fk:
+                    referencedColumnName: id
+            orphanRemoval: false
+        cityFk:
+            targetEntity: City
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                city_fk:
+                    referencedColumnName: id
+            orphanRemoval: false
+    lifecycleCallbacks: {  }

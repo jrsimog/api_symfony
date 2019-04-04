@@ -1,0 +1,32 @@
+App\Entity\Transport:
+    type: entity
+    table: transport
+    id:
+        id:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            id: true
+            generator:
+                strategy: IDENTITY
+    fields:
+        mark:
+            type: string
+            nullable: true
+            length: 55
+            options:
+                fixed: false
+        model:
+            type: string
+            nullable: true
+            length: 55
+            options:
+                fixed: false
+        capacity:
+            type: string
+            nullable: true
+            length: 55
+            options:
+                fixed: false
+    lifecycleCallbacks: {  }

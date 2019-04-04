@@ -1,0 +1,66 @@
+App\Entity\User:
+    type: entity
+    table: user
+    uniqueConstraints:
+        fk_city_idx:
+            columns:
+                - city_fk
+        fk_profile_idx:
+            columns:
+                - profile_fk
+    id:
+        id:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            id: true
+            generator:
+                strategy: IDENTITY
+    fields:
+        name:
+            type: string
+            nullable: true
+            length: 100
+            options:
+                fixed: false
+        rut:
+            type: string
+            nullable: true
+            length: 11
+            options:
+                fixed: false
+        email:
+            type: string
+            nullable: true
+            length: 55
+            options:
+                fixed: false
+        phone:
+            type: string
+            nullable: true
+            length: 55
+            options:
+                fixed: false
+    manyToOne:
+        cityFk:
+            targetEntity: City
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                city_fk:
+                    referencedColumnName: id
+            orphanRemoval: false
+        profileFk:
+            targetEntity: Profile
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                profile_fk:
+                    referencedColumnName: id
+            orphanRemoval: false
+    lifecycleCallbacks: {  }
