@@ -85,6 +85,13 @@ class Notification
 
         return $this;
     }
+    public function getName() {
+        $who = $this->getBranchOfficeFk();
+        return $who->getName();
+    }
+    public function __toString() {
+        return $this->getName();
+    }
 
 
 }

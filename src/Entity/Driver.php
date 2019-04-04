@@ -47,6 +47,14 @@ class Driver
 
         return $this;
     }
+    public function getName() {
+        $user = $this->getUserFk();
+        return $user->getName();
+    }
+
+    public function __toString() {
+        return $this->getName();
+    }
 
 
 }

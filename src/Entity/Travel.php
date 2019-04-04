@@ -151,6 +151,15 @@ class Travel
 
         return $this;
     }
+    public function getName() {
+
+        return $this->getVehicleFk()->getIdChassis();
+        
+    }
+    
+    public function __toString() {
+        return $this->getName();
+    }
 
 
 }

@@ -82,6 +82,13 @@ class Transport
 
         return $this;
     }
+    public function getName() {
+        return $this->getMark() .' '. $this->getModel() .' '. $this->getCapacity();
+    }
+
+    public function __toString() {
+        return $this->getName();
+    }
 
 
 }

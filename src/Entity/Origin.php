@@ -69,6 +69,15 @@ class Origin
 
         return $this;
     }
+    public function getOrgin() {
+        $importer = $this->getImporterFk();
+        $branchOffice_ = $this->getBranchOfficeFk();
+        return $this->getImporterFk() !== null ? $importer->getName() : $branchOffice_->getName();
+    }
+    
+    public function __toString() {
+        return $this->getOrgin();
+    }
 
 
 }

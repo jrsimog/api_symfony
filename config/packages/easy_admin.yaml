@@ -1,6 +1,35 @@
-#easy_admin:
-#    entities:
-#        # List the entity class name you want to manage
-#        - App\Entity\Product
-#        - App\Entity\Category
-#        - App\Entity\User
+easy_admin:
+   entities:
+       # List the entity class name you want to manage
+        User:
+            class: App\Entity\User
+        Vehicle:
+            class: App\Entity\Vehicle
+        Travel:
+            class: App\Entity\Travel
+        Automotive:
+            class: App\Entity\Automotive
+        BranchOffice:
+            class: App\Entity\BranchOffice
+        City:
+            class: App\Entity\City
+        Driver:
+            class: App\Entity\Driver
+        Importer:
+            class: App\Entity\Importer
+        Notification:
+            class: App\Entity\Importer
+        Obeservation:
+            class: App\Entity\Observation
+        Origin:
+            class: App\Entity\Origin
+        Priority:
+            class: App\Entity\Priority
+        Profile:
+            class: App\Entity\Profile
+        Region:
+            class: App\Entity\Region
+        State:
+            class: App\Entity\State
+        Transport:
+            class: App\Entity\Transport 
