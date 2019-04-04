@@ -1,7 +1,7 @@
 App\Entity\Driver:
     type: entity
     table: driver
-    uniqueConstraints:
+    indexes:
         fk_user_idx:
             columns:
                 - user_fk

@@ -1,7 +1,7 @@
 App\Entity\Notification:
     type: entity
     table: notification
-    uniqueConstraints:
+    indexes:
         fk_branch_office_idx:
             columns:
                 - branch_office_fk

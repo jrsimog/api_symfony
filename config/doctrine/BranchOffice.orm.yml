@@ -1,7 +1,7 @@
 App\Entity\BranchOffice:
     type: entity
     table: branch_office
-    uniqueConstraints:
+    indexes:
         fk_city_idx:
             columns:
                 - city_fk

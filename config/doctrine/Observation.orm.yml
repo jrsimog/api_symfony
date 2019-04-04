@@ -1,7 +1,7 @@
 App\Entity\Observation:
     type: entity
     table: observation
-    uniqueConstraints:
+    indexes:
         fk_vehicle_idx:
             columns:
                 - vehicle_fk

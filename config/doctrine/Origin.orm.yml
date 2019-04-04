@@ -1,7 +1,7 @@
 App\Entity\Origin:
     type: entity
     table: origin
-    uniqueConstraints:
+    indexes:
         fk_importer_idx:
             columns:
                 - importer_fk

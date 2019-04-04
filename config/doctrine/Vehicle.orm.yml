@@ -1,25 +1,25 @@
 App\Entity\Vehicle:
     type: entity
     table: vehicle
-    uniqueConstraints:
+    indexes:
+        fk_priority_idx:
+            columns:
+                - priority_fk
         vehicle_type_fk_idx:
             columns:
                 - vehicle_type_fk
         fk_automotive_idx:
             columns:
                 - automotive_fk
-        fk_priority_idx:
-            columns:
-                - priority_fk
-        fk_origin_idx:
-            columns:
-                - origin_fk
         fk_branch_office_idx:
             columns:
                 - branch_office_fk
         fk_state_idx:
             columns:
                 - state_fk
+        fk_origin_idx:
+            columns:
+                - origin_fk
     id:
         id:
             type: integer
@@ -50,11 +50,8 @@ App\Entity\Vehicle:
             options:
                 fixed: false
         requestDate:
-            type: string
+            type: datetime
             nullable: true
-            length: 45
-            options:
-                fixed: false
             column: request_date
     manyToOne:
         stateFk:

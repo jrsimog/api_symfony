@@ -1,7 +1,7 @@
 App\Entity\City:
     type: entity
     table: city
-    uniqueConstraints:
+    indexes:
         fk_region_idx:
             columns:
                 - region_fk
