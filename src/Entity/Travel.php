@@ -75,5 +75,82 @@ class Travel
      */
     private $vehicleFk;
 
+    public function getId(): ?int
+    {
+        return $this->id;
+    }
+
+    public function getStartDate(): ?string
+    {
+        return $this->startDate;
+    }
+
+    public function setStartDate(?string $startDate): self
+    {
+        $this->startDate = $startDate;
+
+        return $this;
+    }
+
+    public function getEndDate(): ?string
+    {
+        return $this->endDate;
+    }
+
+    public function setEndDate(?string $endDate): self
+    {
+        $this->endDate = $endDate;
+
+        return $this;
+    }
+
+    public function getDriverFk(): ?Driver
+    {
+        return $this->driverFk;
+    }
+
+    public function setDriverFk(?Driver $driverFk): self
+    {
+        $this->driverFk = $driverFk;
+
+        return $this;
+    }
+
+    public function getNotificationFk(): ?Notification
+    {
+        return $this->notificationFk;
+    }
+
+    public function setNotificationFk(?Notification $notificationFk): self
+    {
+        $this->notificationFk = $notificationFk;
+
+        return $this;
+    }
+
+    public function getTransportFk(): ?Transport
+    {
+        return $this->transportFk;
+    }
+
+    public function setTransportFk(?Transport $transportFk): self
+    {
+        $this->transportFk = $transportFk;
+
+        return $this;
+    }
+
+    public function getVehicleFk(): ?Vehicle
+    {
+        return $this->vehicleFk;
+    }
+
+    public function setVehicleFk(?Vehicle $vehicleFk): self
+    {
+        $this->vehicleFk = $vehicleFk;
+
+        return $this;
+    }
+
 
 }

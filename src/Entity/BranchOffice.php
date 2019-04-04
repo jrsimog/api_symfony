@@ -55,5 +55,58 @@ class BranchOffice
      */
     private $cityFk;
 
+    public function getId(): ?int
+    {
+        return $this->id;
+    }
+
+    public function getName(): ?string
+    {
+        return $this->name;
+    }
+
+    public function setName(?string $name): self
+    {
+        $this->name = $name;
+
+        return $this;
+    }
+
+    public function getAddress(): ?string
+    {
+        return $this->address;
+    }
+
+    public function setAddress(?string $address): self
+    {
+        $this->address = $address;
+
+        return $this;
+    }
+
+    public function getAutomotiveFk(): ?Automotive
+    {
+        return $this->automotiveFk;
+    }
+
+    public function setAutomotiveFk(?Automotive $automotiveFk): self
+    {
+        $this->automotiveFk = $automotiveFk;
+
+        return $this;
+    }
+
+    public function getCityFk(): ?City
+    {
+        return $this->cityFk;
+    }
+
+    public function setCityFk(?City $cityFk): self
+    {
+        $this->cityFk = $cityFk;
+
+        return $this;
+    }
+
 
 }

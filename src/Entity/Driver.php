@@ -31,5 +31,22 @@ class Driver
      */
     private $userFk;
 
+    public function getId(): ?int
+    {
+        return $this->id;
+    }
+
+    public function getUserFk(): ?User
+    {
+        return $this->userFk;
+    }
+
+    public function setUserFk(?User $userFk): self
+    {
+        $this->userFk = $userFk;
+
+        return $this;
+    }
+
 
 }

@@ -41,5 +41,34 @@ class Origin
      */
     private $importerFk;
 
+    public function getId(): ?int
+    {
+        return $this->id;
+    }
+
+    public function getBranchOfficeFk(): ?BranchOffice
+    {
+        return $this->branchOfficeFk;
+    }
+
+    public function setBranchOfficeFk(?BranchOffice $branchOfficeFk): self
+    {
+        $this->branchOfficeFk = $branchOfficeFk;
+
+        return $this;
+    }
+
+    public function getImporterFk(): ?Importer
+    {
+        return $this->importerFk;
+    }
+
+    public function setImporterFk(?Importer $importerFk): self
+    {
+        $this->importerFk = $importerFk;
+
+        return $this;
+    }
+
 
 }

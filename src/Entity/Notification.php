@@ -45,5 +45,46 @@ class Notification
      */
     private $branchOfficeFk;
 
+    public function getId(): ?int
+    {
+        return $this->id;
+    }
+
+    public function getOutput(): ?int
+    {
+        return $this->output;
+    }
+
+    public function setOutput(?int $output): self
+    {
+        $this->output = $output;
+
+        return $this;
+    }
+
+    public function getReception(): ?int
+    {
+        return $this->reception;
+    }
+
+    public function setReception(?int $reception): self
+    {
+        $this->reception = $reception;
+
+        return $this;
+    }
+
+    public function getBranchOfficeFk(): ?BranchOffice
+    {
+        return $this->branchOfficeFk;
+    }
+
+    public function setBranchOfficeFk(?BranchOffice $branchOfficeFk): self
+    {
+        $this->branchOfficeFk = $branchOfficeFk;
+
+        return $this;
+    }
+
 
 }

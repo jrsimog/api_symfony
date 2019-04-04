@@ -38,5 +38,34 @@ class Observation
      */
     private $vehicleFk;
 
+    public function getId(): ?int
+    {
+        return $this->id;
+    }
+
+    public function getCommentary(): ?string
+    {
+        return $this->commentary;
+    }
+
+    public function setCommentary(?string $commentary): self
+    {
+        $this->commentary = $commentary;
+
+        return $this;
+    }
+
+    public function getVehicleFk(): ?Vehicle
+    {
+        return $this->vehicleFk;
+    }
+
+    public function setVehicleFk(?Vehicle $vehicleFk): self
+    {
+        $this->vehicleFk = $vehicleFk;
+
+        return $this;
+    }
+
 
 }
