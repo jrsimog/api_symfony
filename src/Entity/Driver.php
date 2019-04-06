@@ -7,7 +7,7 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * Driver
  *
- * @ORM\Table(name="driver", uniqueConstraints={@ORM\UniqueConstraint(name="fk_user_idx", columns={"user_fk"})})
+ * @ORM\Table(name="driver", indexes={@ORM\Index(name="fk_user_idx", columns={"user_fk"})})
  * @ORM\Entity
  */
 class Driver
@@ -30,31 +30,6 @@ class Driver
      * })
      */
     private $userFk;
-
-    public function getId(): ?int
-    {
-        return $this->id;
-    }
-
-    public function getUserFk(): ?User
-    {
-        return $this->userFk;
-    }
-
-    public function setUserFk(?User $userFk): self
-    {
-        $this->userFk = $userFk;
-
-        return $this;
-    }
-    public function getName() {
-        $user = $this->getUserFk();
-        return $user->getName();
-    }
-
-    public function __toString() {
-        return $this->getName();
-    }
 
 
 }

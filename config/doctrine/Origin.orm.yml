@@ -2,12 +2,12 @@ App\Entity\Origin:
     type: entity
     table: origin
     indexes:
-        fk_importer_idx:
-            columns:
-                - importer_fk
         fk_branch_office_idx:
             columns:
                 - branch_office_fk
+        fk_importer_idx:
+            columns:
+                - importer_fk
     id:
         id:
             type: integer

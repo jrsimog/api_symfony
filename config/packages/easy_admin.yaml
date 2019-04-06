@@ -18,7 +18,7 @@ easy_admin:
         Importer:
             class: App\Entity\Importer
         Notification:
-            class: App\Entity\Importer
+            class: App\Entity\Notification
         Obeservation:
             class: App\Entity\Observation
         Origin:
@@ -32,4 +32,7 @@ easy_admin:
         State:
             class: App\Entity\State
         Transport:
-            class: App\Entity\Transport 
+            class: App\Entity\Transport
+        VehicleType:
+            class: App\Entity\VehicleType
+            

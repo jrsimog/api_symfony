@@ -2,12 +2,12 @@ App\Entity\BranchOffice:
     type: entity
     table: branch_office
     indexes:
-        fk_city_idx:
-            columns:
-                - city_fk
         fk_automotive_idx:
             columns:
                 - automotive_fk
+        fk_city_idx:
+            columns:
+                - city_fk
     id:
         id:
             type: integer

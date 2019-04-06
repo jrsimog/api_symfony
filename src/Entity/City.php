@@ -7,7 +7,7 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * City
  *
- * @ORM\Table(name="city", uniqueConstraints={@ORM\UniqueConstraint(name="fk_region_idx", columns={"region_fk"})})
+ * @ORM\Table(name="city", indexes={@ORM\Index(name="fk_region_idx", columns={"region_fk"})})
  * @ORM\Entity
  */
 class City
@@ -38,36 +38,5 @@ class City
      */
     private $regionFk;
 
-    public function getId(): ?int
-    {
-        return $this->id;
-    }
 
-    public function getName(): ?string
-    {
-        return $this->name;
-    }
-
-    public function setName(?string $name): self
-    {
-        $this->name = $name;
-
-        return $this;
-    }
-
-    public function getRegionFk(): ?Region
-    {
-        return $this->regionFk;
-    }
-
-    public function setRegionFk(?Region $regionFk): self
-    {
-        $this->regionFk = $regionFk;
-
-        return $this;
-    }
-
-    public function __toString() {
-        return $this->getName();
-    }
 }

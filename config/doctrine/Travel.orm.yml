@@ -2,18 +2,18 @@ App\Entity\Travel:
     type: entity
     table: travel
     indexes:
+        fk_transport_idx:
+            columns:
+                - transport_fk
+        fk_notification_idx:
+            columns:
+                - notification_fk
         fk_vehicle_idx:
             columns:
                 - vehicle_fk
         fk_driver_idx:
             columns:
                 - driver_fk
-        fk_notification_idx:
-            columns:
-                - notification_fk
-        fk_transport_idx:
-            columns:
-                - transport_fk
     id:
         id:
             type: integer

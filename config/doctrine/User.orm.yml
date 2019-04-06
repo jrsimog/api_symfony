@@ -2,12 +2,12 @@ App\Entity\User:
     type: entity
     table: user
     indexes:
-        fk_city_idx:
-            columns:
-                - city_fk
         fk_profile_idx:
             columns:
                 - profile_fk
+        fk_city_idx:
+            columns:
+                - city_fk
     id:
         id:
             type: integer

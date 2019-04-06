@@ -7,7 +7,7 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * Travel
  *
- * @ORM\Table(name="travel", uniqueConstraints={@ORM\UniqueConstraint(name="fk_transport_idx", columns={"transport_fk"}), @ORM\UniqueConstraint(name="fk_notification_idx", columns={"notification_fk"}), @ORM\UniqueConstraint(name="fk_driver_idx", columns={"driver_fk"}), @ORM\UniqueConstraint(name="fk_vehicle_idx", columns={"vehicle_fk"})})
+ * @ORM\Table(name="travel", indexes={@ORM\Index(name="fk_transport_idx", columns={"transport_fk"}), @ORM\Index(name="fk_notification_idx", columns={"notification_fk"}), @ORM\Index(name="fk_vehicle_idx", columns={"vehicle_fk"}), @ORM\Index(name="fk_driver_idx", columns={"driver_fk"})})
  * @ORM\Entity
  */
 class Travel
@@ -22,16 +22,16 @@ class Travel
     private $id;
 
     /**
-     * @var string|null
+     * @var \DateTime|null
      *
-     * @ORM\Column(name="start_date", type="string", length=45, nullable=true)
+     * @ORM\Column(name="start_date", type="datetime", nullable=true)
      */
     private $startDate;
 
     /**
-     * @var string|null
+     * @var \DateTime|null
      *
-     * @ORM\Column(name="end_date", type="string", length=45, nullable=true)
+     * @ORM\Column(name="end_date", type="datetime", nullable=true)
      */
     private $endDate;
 
@@ -74,92 +74,6 @@ class Travel
      * })
      */
     private $vehicleFk;
-
-    public function getId(): ?int
-    {
-        return $this->id;
-    }
-
-    public function getStartDate(): ?string
-    {
-        return $this->startDate;
-    }
-
-    public function setStartDate(?string $startDate): self
-    {
-        $this->startDate = $startDate;
-
-        return $this;
-    }
-
-    public function getEndDate(): ?string
-    {
-        return $this->endDate;
-    }
-
-    public function setEndDate(?string $endDate): self
-    {
-        $this->endDate = $endDate;
-
-        return $this;
-    }
-
-    public function getDriverFk(): ?Driver
-    {
-        return $this->driverFk;
-    }
-
-    public function setDriverFk(?Driver $driverFk): self
-    {
-        $this->driverFk = $driverFk;
-
-        return $this;
-    }
-
-    public function getNotificationFk(): ?Notification
-    {
-        return $this->notificationFk;
-    }
-
-    public function setNotificationFk(?Notification $notificationFk): self
-    {
-        $this->notificationFk = $notificationFk;
-
-        return $this;
-    }
-
-    public function getTransportFk(): ?Transport
-    {
-        return $this->transportFk;
-    }
-
-    public function setTransportFk(?Transport $transportFk): self
-    {
-        $this->transportFk = $transportFk;
-
-        return $this;
-    }
-
-    public function getVehicleFk(): ?Vehicle
-    {
-        return $this->vehicleFk;
-    }
-
-    public function setVehicleFk(?Vehicle $vehicleFk): self
-    {
-        $this->vehicleFk = $vehicleFk;
-
-        return $this;
-    }
-    public function getName() {
-
-        return $this->getVehicleFk()->getIdChassis();
-        
-    }
-    
-    public function __toString() {
-        return $this->getName();
-    }
 
 
 }

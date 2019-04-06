@@ -2,24 +2,24 @@ App\Entity\Vehicle:
     type: entity
     table: vehicle
     indexes:
-        fk_priority_idx:
+        fk_origin_idx:
             columns:
-                - priority_fk
-        vehicle_type_fk_idx:
-            columns:
-                - vehicle_type_fk
-        fk_automotive_idx:
-            columns:
-                - automotive_fk
+                - origin_fk
         fk_branch_office_idx:
             columns:
                 - branch_office_fk
         fk_state_idx:
             columns:
                 - state_fk
-        fk_origin_idx:
+        vehicle_type_fk_idx:
             columns:
-                - origin_fk
+                - vehicle_type_fk
+        fk_automotive_idx:
+            columns:
+                - automotive_fk
+        fk_priority_idx:
+            columns:
+                - priority_fk
     id:
         id:
             type: integer
